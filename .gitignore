@@ -1,0 +1,14 @@
+/target
+**/*.rs.bk
+
+
+# SQLite database and transaction files
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+
+# Release packaging outputs
+/release/
+/stage/
+

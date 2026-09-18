@@ -1,0 +1,22 @@
+[package]
+name = "cmdmind"
+version = "0.1.0"
+edition = "2021"
+description = "Local-first natural-language command-line interface for macOS zsh"
+license = "MIT"
+readme = "README.md"
+repository = "https://github.com/cmdmind/cmdmind"
+
+
+[dependencies]
+tokio = { version = "1", features = ["macros", "rt-multi-thread"] }
+reqwest = { version = "0.12", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+rusqlite = { version = "0.32", features = ["bundled"] }
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+dirs = "5.0"
+
+[[bench]]
+name = "benchmarks"
+harness = false

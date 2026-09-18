@@ -1,0 +1,3 @@
+[env]
+CC_x86_64_pc_windows_gnu = "C:\\Users\\shubh\\.cargo\\w64devkit\\bin\\gcc.exe"
+AR_x86_64_pc_windows_gnu = "C:\\Users\\shubh\\.cargo\\w64devkit\\bin\\ar.exe"

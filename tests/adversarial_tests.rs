@@ -451,6 +451,12 @@ fn test_invariant_1_command_plan_cannot_reach_zsh_buffer_api() {
     let plan = CommandPlan::new("ls", "List files", CommandSource::Tier1);
     let validated = validate(plan).unwrap();
     let zsh_cmd = prepare_for_zsh(validated);
+    #[cfg(target_os = "macos")]
+    assert_eq!(
+        zsh_cmd.review_status(),
+        "Ready for human review in macOS zsh buffer"
+    );
+    #[cfg(not(target_os = "macos"))]
     assert_eq!(zsh_cmd.review_status(), "Ready for human review");
 }
 
